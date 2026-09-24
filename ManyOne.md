@@ -84,7 +84,84 @@ The network should find, combine, execute, verify, and reuse the skills that alr
 
 ---
 
-## 3. The Core Principle
+## 3. Why Now: What 2026 Made Visible
+
+The problems above are not hypothetical. By late 2026 they are showing up in public, all at once.
+
+### Results are getting cheap. Understanding is not.
+
+On September 8, 2026, OpenAI said a swarm of about 10,000 agents running for 88 hours had resolved the Navier–Stokes existence and smoothness problem.
+
+Mathematicians' reaction was not mainly "is it true?" It was "what did we learn?"
+
+- James Maynard (Oxford) told NPR it has been "very difficult to really extract any human understanding" from the proof.
+- Javier Gómez-Serrano noted the paper does not explain which parts are important, which are routine, or how the ideas connect to other problems.
+- Terence Tao called the development "quite concerning". AI can race to an answer before people have time to pull out the methods and insights that normally come from solving a hard problem. He also warned that "even the rumor of someone working on a problem can trigger a massive amount of AI-powered effort to flatten it."
+- Tristan Buckmaster, who was working on the problem with Levent Alpöge, alleged that OpenAI knew more about their approach than it admitted. OpenAI denies using their work.
+- On September 11, 2026, Tao and 24 other Fields Medallists signed *A Severe Misalignment of AI in Mathematics*. It argues that treating famous problems as benchmarks bypasses the human process of review, write-up and transmission that turns a proof into shared understanding. It raises concerns about attribution, and it says the problem extends to "other scientific and creative professions."
+
+In his 2026 ICM plenary, Tao described mathematics moving from a shortage of proofs to an abundance of them. He warned that generative AI combined with commercial incentives is especially vulnerable to Goodhart's law, and he argued that verification (for example in Lean), exposition and passing the work on to others now matter more than generating it.
+
+The lesson for ManyOne:
+
+> **An output is not a capability. Someone has to learn from it, attribute it and pass it on.**
+
+If a network only stores answers, it repeats the problem the mathematicians describe. ManyOne should store *how* and *why*, not just *what*.
+
+### The model makers are in a race
+
+Frontier labs now ship new models every few weeks. In September 2026 alone, GPT-6 Astra, GPT-6 Sol/Luna and Claude Opus 5.5 were released, as the labs head toward public listings.
+
+Each lab builds its own agent, its own tool format, its own skill store and its own memory. Most of what users learn inside one of these silos stays there. It resets with the next model or disappears when the user switches vendors.
+
+A race to build the smartest single model does not produce a shared record of *what actually worked*. That record needs to be neutral, work with any model, and outlast any single release.
+
+### Capability leaks anyway, through extraction instead of exchange
+
+In September 2026, Anthropic reported that accounts linked to Alibaba, Moonshot AI, DeepSeek, Xiaomi and Zhipu ran industrial-scale "distillation" campaigns against Claude. It said Alibaba-linked accounts alone generated more than 151 million exchanges, spread across about 3,500 fraudulent accounts. It also reported that Moonshot relayed some Kimi user requests to Claude and presented the answers as Kimi's. U.S. agencies (CISA advisory AA26-251A) described similar extraction from several U.S. labs. The accused companies have not accepted these characterizations.
+
+Around the same time, the open web crossed a threshold. Reported bot traffic overtook human traffic for HTML pages in mid-2026. Cloudflare, which fronts roughly a fifth of the web, moved AI crawlers to block-by-default and pay-per-crawl, and is now testing **pay-per-use**: publishers are paid when their content is actually used in an answer.
+
+These are two sides of the same failure:
+
+> **Valuable know-how gets copied at scale, but nobody records who it came from, and nobody gets paid.**
+
+Walls and lawsuits can slow this down. They cannot make reuse productive. What is missing is an easier, legitimate path: reuse that is cheaper than stealing because provenance, licensing and payment come built in.
+
+### Free-shared skills are exploding, and so is the damage
+
+Agent "skills" (packaged instructions, scripts and tools that agents load on demand) became a de facto format in late 2025. Within months, public marketplaces listed tens of thousands of skills; one registry, ClawHub, reportedly passed 70,000 by mid-2026. Most are free, community-made and unreviewed.
+
+The result looks like the early days of package registries, only worse:
+
+- Researchers found confirmed malicious payloads in skills from major marketplaces, including credential theft, backdoors and data exfiltration.
+- The "ClawHavoc" campaign reportedly used a coordinated wave of uploads to plant info-stealers that harvested API keys, SSH keys, passwords and crypto wallets.
+- Once installed, a skill runs with the agent's full privileges. Publishing one can take little more than a SKILL.md file and a new account.
+
+Free sharing without provenance, evidence or accountability does not produce collective intelligence. It produces a supply-chain attack surface.
+
+### Agents are bloating
+
+Loading every capability into every agent does not scale. Reported MCP tool definitions alone can use tens of thousands of tokens, sometimes close to half a context window, before the agent reads the user's request. The 2026 fixes (tool search, progressive disclosure, code-mode execution) all do the same thing: **don't carry everything; find the right capability when it is needed.**
+
+That is the ManyOne principle, applied inside a single agent. ManyOne applies it across the network. A participant should not have to install a thousand skills. The network should find the few that have *evidence* of working for this task and bring in only those.
+
+### Putting it together
+
+| What 2026 showed | What ManyOne does about it |
+|---|---|
+| Proofs and outputs are abundant; understanding is scarce | Share workflows along with the reasoning, explanation and lessons learned, not bare answers |
+| Labs race; users' experience stays locked in each silo | A model-neutral layer of workflows and evidence that outlasts any single model |
+| Distillation and crawling take value without attribution | Licensed, attributed reuse that pays contributors when their work is *used* |
+| Free skill sharing is flooding registries with unvetted and malicious code | Provenance, signed versions, sandboxing and reputation based on observed results |
+| Agents bloat by loading everything | The network routes to a few proven capabilities on demand |
+| Benchmarks invite Goodhart's law | Verification is layered, grounded and hard to game (see §15) |
+
+None of these problems is solved by a smarter single model. They are problems of **coordination, provenance, verification and incentives**, which is the layer ManyOne is designed for.
+
+---
+
+## 4. The Core Principle
 
 ManyOne is built around a simple loop:
 
@@ -116,7 +193,7 @@ The network becomes smarter not only because models improve, but because **the n
 
 ---
 
-## 4. What ManyOne Shares
+## 5. What ManyOne Shares
 
 ManyOne does not only share information.
 
@@ -135,6 +212,8 @@ A reusable workflow can contain:
 - execution steps
 - outputs
 - verification
+- rationale: why each step exists, which parts are essential and which are routine
+- lessons: what was tried, what failed, and what was learned along the way
 - cost
 - time
 - success rate
@@ -147,9 +226,11 @@ A workflow is not just documentation.
 
 > **It is executable experience.**
 
+It should also be *explainable* experience. A workflow that works but that no one can understand is like an unreadable proof: it can be reused, but no one can learn from it or improve it. ManyOne treats the explanation as part of the contribution, not an optional extra.
+
 ---
 
-## 5. Core Concepts
+## 6. Core Concepts
 
 ### Human
 
@@ -195,7 +276,7 @@ The network's accumulated understanding of capabilities, workflows, outcomes, an
 
 ---
 
-## 6. How ManyOne Works
+## 7. How ManyOne Works
 
 A human starts with an intention:
 
@@ -248,7 +329,7 @@ The network decides through capability, context, evidence, and availability.
 
 ---
 
-## 7. No Fixed Team
+## 8. No Fixed Team
 
 ManyOne is not a marketplace of fixed teams.
 
@@ -284,7 +365,7 @@ The structure is generated by the problem.
 
 ---
 
-## 8. Collective Memory
+## 9. Collective Memory
 
 The most important asset of ManyOne is not a list of agents.
 
@@ -307,7 +388,7 @@ They do not need to pay the full cost of discovering it again.
 
 ---
 
-## 9. Workflows Can Evolve
+## 10. Workflows Can Evolve
 
 A workflow should behave more like source code than a static document.
 
@@ -343,7 +424,7 @@ Good workflows become better through use.
 
 ---
 
-## 10. From Workflows to Composite Agents
+## 11. From Workflows to Composite Agents
 
 A successful workflow can become a higher-level capability.
 
@@ -374,7 +455,7 @@ The system is recursive:
 
 ---
 
-## 11. Open Contribution
+## 12. Open Contribution
 
 ManyOne should allow both humans and machines to contribute.
 
@@ -403,7 +484,7 @@ The network should remember who created, improved, verified, and executed someth
 
 ---
 
-## 12. Economic Model
+## 13. Economic Model
 
 Reusable intelligence should create reusable value.
 
@@ -435,6 +516,14 @@ Possible participants in a value split include:
 - infrastructure providers
 - the network
 
+Value should flow from **use**, not access.
+
+The web is already heading this way: from free crawling, to pay-per-crawl, to pay-per-use, where a source is paid when its content actually contributes to an answer. ManyOne builds this into the network. A workflow's contributors are paid when an execution uses their work, in proportion to what it contributed, according to its recorded lineage.
+
+This is also the practical answer to extraction. Copying cannot be fully prevented. But when the legitimate path is cheaper, faster and better supported than distilling or scraping, because it comes with provenance, evidence, updates and support, most participants will choose it.
+
+Rewards should also resist gaming. If contributors are paid on one metric (success count, benchmark score, number of runs), that metric will be gamed. Rewards should weigh verified outcomes, independent verification and long-term reuse, not raw volume.
+
 The exact economic model can evolve.
 
 The principle is simple:
@@ -443,7 +532,7 @@ The principle is simple:
 
 ---
 
-## 13. Ownership and Provenance
+## 14. Ownership and Provenance
 
 ManyOne should make contribution visible and traceable.
 
@@ -457,6 +546,10 @@ A workflow should be able to answer:
 - Which version produced the result?
 - What license applies?
 - Who receives revenue?
+
+Provenance is also a **security** requirement. Unreviewed, free-shared agent skills have already been used to spread credential stealers at scale. In ManyOne, a capability should not run unless the network can say who published it, which exact version is running, what permissions it asks for, and what record of verified executions supports it. Skills and workflows should be content-hashed and signed. They should run in a sandbox with least privilege, and anyone should be able to revoke a version and see which executions depended on it.
+
+Provenance also protects **priority**. When anyone can point a swarm of agents at an open problem, the people who opened the path can be overtaken before their work is finished, and can end up erased from the record. ManyOne should let contributors timestamp and register work in progress privately, so that they get credit when it is later built on. It should also make derivation visible, not hide it.
 
 Blockchain is useful here, but it should not store everything.
 
@@ -494,7 +587,7 @@ ManyOne provides collective intelligence.
 
 ---
 
-## 14. Verification
+## 15. Verification
 
 A network that only remembers successful claims will become unreliable.
 
@@ -521,9 +614,19 @@ The network can know:
 
 Experience becomes evidence.
 
+Verification also has to survive Goodhart's law. Once a measure becomes a target, it stops being a good measure, and AI combined with commercial incentives makes this worse. ManyOne should therefore:
+
+- prefer **grounded** checks (formal proofs such as Lean, executable tests, real-world outcomes) over self-reported scores
+- use **independent** verifiers that do not share incentives with the executor
+- rotate and hide evaluation sets so that no single benchmark becomes the target
+- track results **over time**, including what went wrong after "success"
+- record **understanding** as well as correctness: can a human or agent explain why this worked, which parts matter, and when it will fail?
+
+A result that is verified but not understood is still useful. But the network should label it as such. It should not treat it as equal to a result that is understood.
+
 ---
 
-## 15. Privacy and Openness
+## 16. Privacy and Openness
 
 Collective intelligence does not mean everything must be public.
 
@@ -543,9 +646,11 @@ The goal is not to remove ownership.
 
 The goal is to make **controlled sharing and reuse possible**.
 
+This matters because both extremes are failing. Fully closed systems leak through distillation and scraping anyway. Fully open, unaccountable sharing turns into a malware channel. ManyOne sits between them: shared by default where contributors choose, private where they need to be, and attributed and accountable either way.
+
 ---
 
-## 16. The Network Gets Better With Use
+## 17. The Network Gets Better With Use
 
 ManyOne has a compounding loop:
 
@@ -577,7 +682,7 @@ Every useful contribution can make future work easier.
 
 ---
 
-## 17. What We Are Building
+## 18. What We Are Building
 
 ManyOne is not:
 
@@ -595,9 +700,17 @@ The larger system is:
 
 > **A network that learns how to get things done.**
 
+ManyOne should also avoid repeating what 2026 exposed. It should not become:
+
+- a firehose of answers that nobody understands
+- a benchmark-chasing machine that races people to their own open problems
+- a scraper that takes contributors' work without credit
+- an unreviewed skill registry that ships stolen credentials
+- one agent loaded down with ten thousand tools it never uses
+
 ---
 
-## 18. The Larger Vision
+## 19. The Larger Vision
 
 Today, humans share knowledge through:
 
@@ -628,7 +741,7 @@ That is **procedural collective intelligence**.
 
 ---
 
-## 19. Long-Term Imagination
+## 20. Long-Term Imagination
 
 Imagine asking ManyOne:
 
@@ -672,7 +785,7 @@ It requires the network to become better at **organizing intelligence**.
 
 ---
 
-## 20. The Civilizational Idea
+## 21. The Civilizational Idea
 
 Human progress has always depended on accumulated experience.
 
@@ -704,13 +817,13 @@ ManyOne attempts to give that collective intelligence a native network.
 
 ---
 
-## 21. The North Star
+## 22. The North Star
 
 ManyOne should make one thing increasingly true:
 
 > **Every time someone figures out a better way to get something done, the network should make that way available to future participants.**
 
-And the network should reward the people and machines that make that possible.
+And the network should reward the people and machines that make that possible, and should make sure that what it spreads is understood, verified and credited, not just produced.
 
 ### In one sentence
 
@@ -719,3 +832,25 @@ And the network should reward the people and machines that make that possible.
 ### In three words
 
 > **Many minds. One capability.**
+
+---
+
+## Sources (as of September 2026)
+
+These are the public reports behind §3. The claims about distillation and about who used whose work are **allegations** that the other parties dispute. They are summarized here as reported, not as established fact.
+
+- NPR, "Mathematicians learn little from AI completing unsolved problem" (Sept 22, 2026): https://www.npr.org/2026/09/22/nx-s1-5968588/openai-navier-stokes-problem-mathematicians-learn-little
+- OpenAI, "On the Navier–Stokes Millennium Prize Problem": https://openai.com/index/navier-stokes-solution/
+- Nature, "OpenAI claims huge maths breakthrough on a famed 'Millennium Problem'": https://www.nature.com/articles/d41586-026-02842-5
+- Fortune, "OpenAI says it cracked Navier-Stokes…" (Sept 8, 2026): https://fortune.com/2026/09/08/openai-says-it-cracked-navier-stokes-math-grand-challenge-buckmaster-accusation-cheating-intimidation-tao-lament/
+- T. Tao et al., "A Severe Misalignment of AI in Mathematics" (Sept 11, 2026): https://terrytao.wordpress.com/2026/09/11/a-severe-misalignment-of-ai-in-mathematics/
+- Scientific American, "25 winners of math's 'Nobel Prize' decry the AI invasion of their discipline": https://www.scientificamerican.com/article/25-winners-of-maths-nobel-prize-decry-the-ai-invasion-of-their-discipline/
+- AI Weekly, "Tao's ICM 2026 essay sets ground rules for AI in mathematics": https://aiweekly.co/alerts/taos-icm-2026-essay-sets-ground-rules-for-ai-in-mathematics
+- The Register, "Frontier AI keeps racing despite calls to slow down" (Sept 23, 2026): https://www.theregister.com/ai-and-ml/2026/09/23/frontier-ai-keeps-racing-despite-calls-to-slow-down/5298448
+- TechCrunch, "Anthropic details distillation campaigns from Alibaba, Moonshot AI, and DeepSeek" (Sept 10, 2026): https://techcrunch.com/2026/09/10/anthropic-details-distillation-campaigns-from-alibaba-moonshot-ai-and-deepseek/
+- CNBC, "Chinese AI labs secretly used millions of Claude exchanges to train their models, Anthropic says" (Sept 11, 2026): https://www.cnbc.com/2026/09/11/chinese-ai-labs-moonshot-deepseek-alibaba-anthropic.html
+- CISA advisory AA26-251A: https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-251a
+- TechCrunch, "Cloudflare's new policy pushes AI companies to pay for publishers' content" (July 1, 2026): https://techcrunch.com/2026/07/01/cloudflares-new-policy-pushes-ai-companies-to-pay-for-publishers-content/
+- Help Net Security, "Malicious AI agent skills can slip past the scanners built to stop them" (July 9, 2026): https://www.helpnetsecurity.com/2026/07/09/malicious-ai-agent-skills-scan/
+- "Agent Skill Security: Threat Models, Attacks, Defenses, and Evaluation" (arXiv 2607.13987): https://arxiv.org/pdf/2607.13987
+- MCP.Directory, "MCP Context Bloat Fix 2026 (Tool Search)": https://mcp.directory/blog/mcp-context-bloat-fix-2026-tool-search-code-mode-progressive-disclosure
