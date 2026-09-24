@@ -2,7 +2,7 @@
 
 > **Many minds. One capability.**
 
-ManyOne is a **Collective Intelligence Network**: a network where humans and agents contribute capabilities, experience, workflows, and resources, then combine them to solve problems together.
+ManyOne is a **Collective Intelligence Network**: a network where humans and agents contribute capabilities, experience, workflows, and resources, then combine them to solve problems together — in the open, or within an organization.
 
 ---
 
@@ -459,7 +459,30 @@ The system is recursive:
 
 ---
 
-## 12. Open Contribution
+## 12. What Lasts
+
+Models improve every few weeks.
+
+Today's five-step workflow may be tomorrow's single prompt.
+
+That is not a threat. It is the network working: what was learned became capability.
+
+But some things are never absorbed into a model:
+
+- **evidence** — what worked, where, how often, and where it failed
+- **provenance** — who contributed what, and what it was built on
+- **verification** — who checked it, and how
+- **accountability** — who stands behind the result
+
+Workflows are how ManyOne learns.
+
+Trust is what ManyOne keeps.
+
+> **Workflows change with every model. The record of what can be trusted compounds.**
+
+---
+
+## 13. Open Contribution
 
 ManyOne should allow both humans and machines to contribute.
 
@@ -488,7 +511,7 @@ The network should remember who created, improved, verified, and executed someth
 
 ---
 
-## 13. Economic Model
+## 14. Economic Model
 
 Reusable intelligence should create reusable value.
 
@@ -524,7 +547,16 @@ Value should flow from **use**, not access.
 
 When a contribution helps produce a result, its lineage determines who shares the value.
 
-The legitimate path should be easier than taking: reuse that comes with provenance, evidence, and updates beats a copy that comes with nothing.
+What is worth paying for is not the text of a workflow. Text can be copied in seconds.
+
+What cannot be copied:
+
+- verified execution
+- a track record
+- continued improvement
+- someone accountable for the result
+
+That is what makes the legitimate path easier than taking.
 
 Rewards should follow verified outcomes, not raw volume. A single metric that pays becomes a metric that gets gamed.
 
@@ -536,7 +568,7 @@ The principle is simple:
 
 ---
 
-## 14. Ownership and Provenance
+## 15. Ownership and Provenance
 
 ManyOne should make contribution visible and traceable.
 
@@ -557,9 +589,11 @@ A capability should not run unless the network knows who published it, which ver
 
 And provenance protects **priority**. Work in progress can be registered privately, so those who opened a path are credited when others build on it.
 
-Blockchain is useful here, but it should not store everything.
+Where many parties must agree without trusting a single operator, a shared ledger — such as a blockchain — can anchor this record.
 
-### Chain related
+It is an implementation choice, not the foundation. And it should not store everything.
+
+### On the ledger
 
 Store or verify:
 
@@ -574,7 +608,7 @@ Store or verify:
 - economic events
 - settlement
 
-### Outside the chain
+### Off the ledger
 
 Store:
 
@@ -587,13 +621,13 @@ Store:
 - artifacts
 - sensitive information
 
-Chain provides trust and coordination.
+The ledger records and settles.
 
 ManyOne provides collective intelligence.
 
 ---
 
-## 15. Verification
+## 16. Verification
 
 A network that only remembers successful claims will become unreliable.
 
@@ -630,23 +664,34 @@ So ManyOne prefers:
 
 And it records not only **whether** something works, but whether anyone understands **why**.
 
+Verification also has a cost.
+
+In some domains checking is cheap: tests, proofs, measurable outcomes.
+
+In others it is as hard as doing the work, or there is no ground truth at all.
+
+ManyOne should be honest about this. Every piece of evidence carries how it was obtained. Reputation is earned through verified work, not through accounts. And the network grows first where verification is cheap.
+
 ---
 
-## 16. Privacy and Openness
+## 17. Public, Private, Federated
 
-Collective intelligence does not mean everything must be public.
+Collective intelligence does not have to be public.
 
-ManyOne should support:
+A company, a research lab, a hospital, or a government team has its own collective intelligence: its people, its agents, its hard-won ways of working.
 
-- public knowledge
-- private knowledge
-- personal workflows
-- organization workflows
-- paid workflows
-- licensed workflows
-- restricted capabilities
-- private execution
-- derivative workflows
+ManyOne can run as:
+
+- **a public network**, open to anyone
+- **a private network**, inside one organization
+- **a consortium**, shared among trusted partners
+- **a federation** of all of these, connected by the same protocol
+
+A private ManyOne learns from its own executions. Its workflows, data, and experts stay inside.
+
+When it chooses, it can share selectively: publish a workflow, license a capability, or share only the **evidence** — *"this approach succeeded 97% of the time"* — without revealing the content.
+
+Within any network, contributions can be public, private, licensed, paid, or restricted.
 
 The goal is not to remove ownership.
 
@@ -658,7 +703,7 @@ ManyOne sits between: shared where contributors choose, private where needed, **
 
 ---
 
-## 17. The Network Gets Better With Use
+## 18. The Network Gets Better With Use
 
 ManyOne has a compounding loop:
 
@@ -690,7 +735,7 @@ Every useful contribution can make future work easier.
 
 ---
 
-## 18. What We Are Building
+## 19. What We Are Building
 
 ManyOne is not:
 
@@ -708,11 +753,73 @@ The larger system is:
 
 > **A network that learns how to get things done.**
 
+At its core is a **trust layer for capability**: evidence, provenance, and verification. Workflows, agents, and markets are built on top of it.
+
 And it should not become what 2026 warned against: a stream of answers no one understands, or a commons no one can trust.
 
 ---
 
-## 19. The Larger Vision
+## 20. What Came Before
+
+ManyOne is not the first attempt at shared capability.
+
+**Package registries** showed that shared, versioned building blocks compound.
+They also showed that without provenance, they become an attack surface.
+
+**Q&A commons** showed that people freely share how to solve problems.
+They also showed that when AI absorbs that knowledge and returns nothing, the commons declines.
+
+**Crypto AI networks** promised composable agents and rewarded contributors.
+Many attracted speculation faster than real use.
+
+**Agent and skill marketplaces** grew quickly.
+They filled with supply no one had verified.
+
+The lessons are simple:
+
+> **Use before tokens. Evidence before listings. Return value to the source, or the source dries up.**
+
+ManyOne differs in where it starts: not with a marketplace or a token, but with a record of what worked, earned through real use.
+
+---
+
+## 21. Where to Start
+
+A network like this cannot start everywhere at once.
+
+It should start where:
+
+- verification is cheap
+- work repeats often
+- trust is already a pain
+
+Three natural beginnings:
+
+**Trusted skills.** Provenance, sandboxing, and track records for the agent skills people already install. The need is urgent now.
+
+**Inside one organization.** A private ManyOne that turns its own teams' and agents' work into reusable, verified capability.
+
+**Verifiable domains.** Software with tests. Data pipelines. Formal mathematics. Localization with quality review. Places where "it worked" can be checked.
+
+Then it grows outward:
+
+```text
+Trusted Skills
+      ↓
+Private Networks
+      ↓
+Federated Networks
+      ↓
+Public Network
+```
+
+From one organization to its partners. From one domain to the next. From evidence that is cheap to get to evidence that is hard to get.
+
+> **The large vision is earned one verified domain at a time.**
+
+---
+
+## 22. The Larger Vision
 
 Today, humans share knowledge through:
 
@@ -743,7 +850,7 @@ That is **procedural collective intelligence**.
 
 ---
 
-## 20. Long-Term Imagination
+## 23. Long-Term Imagination
 
 Imagine asking ManyOne:
 
@@ -787,7 +894,7 @@ It requires the network to become better at **organizing intelligence**.
 
 ---
 
-## 21. The Civilizational Idea
+## 24. The Civilizational Idea
 
 Human progress has always depended on accumulated experience.
 
@@ -819,7 +926,7 @@ ManyOne attempts to give that collective intelligence a native network.
 
 ---
 
-## 22. The North Star
+## 25. The North Star
 
 ManyOne should make one thing increasingly true:
 
