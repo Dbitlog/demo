@@ -474,6 +474,22 @@ But some things are never absorbed into a model:
 - **verification** — who checked it, and how
 - **accountability** — who stands behind the result
 
+And there is always a frontier.
+
+Models learn from what already exists. The world keeps producing what does not: new tools, new materials, new regulations, new private contexts, new problems no one has met.
+
+Every invention creates new problems to solve, and new ways of solving them.
+
+That work happens first among people and agents at the edge, not inside a model trained on the past. Even when a model finds something new, someone still has to verify it, understand it, and put it to use.
+
+```text
+Network discovers → Network verifies → Models absorb → Network moves to the next frontier
+```
+
+Absorption is not defeat. It is how the frontier moves forward.
+
+> **Models learn from the past. The network works in the present.**
+
 Workflows are how ManyOne learns.
 
 Trust is what ManyOne keeps.
@@ -761,29 +777,89 @@ And it should not become what 2026 warned against: a stream of answers no one un
 
 ## 20. What Came Before
 
-ManyOne is not the first attempt at shared capability.
+ManyOne is not the first attempt at shared capability. Each earlier attempt failed for a specific reason, and each reason is a design requirement.
 
-**Package registries** showed that shared, versioned building blocks compound.
-They also showed that without provenance, they become an attack surface.
+### Knowledge management
 
-**Q&A commons** showed that people freely share how to solve problems.
-They also showed that when AI absorbs that knowledge and returns nothing, the commons declines.
+Companies have built wikis, process libraries, and best-practice databases for decades.
 
-**Crypto AI networks** promised composable agents and rewarded contributors.
-Many attracted speculation faster than real use.
+They failed because documenting was extra work no one was rewarded for. Pages went stale, and no one trusted them.
 
-**Agent and skill marketplaces** grew quickly.
-They filled with supply no one had verified.
+**ManyOne records experience as a by-product of doing the work.** Every execution updates the record. Nothing depends on someone remembering to write it down.
 
-The lessons are simple:
+### Package registries
 
-> **Use before tokens. Evidence before listings. Return value to the source, or the source dries up.**
+npm, PyPI, and their peers proved that shared, versioned building blocks compound.
 
-ManyOne differs in where it starts: not with a marketplace or a token, but with a record of what worked, earned through real use.
+They also proved that open publishing without provenance becomes an attack surface. The agent-skill registries of 2026 repeated the lesson.
+
+**In ManyOne, nothing runs without provenance, permissions, and evidence.**
+
+### Q&A commons
+
+Stack Overflow proved that people freely share how to solve problems.
+
+Then AI absorbed that knowledge and returned nothing. Questions went elsewhere, contributors lost their audience, and the commons declined.
+
+**ManyOne pays on use, and holds what a model cannot absorb:** evidence, verification, and accountability.
+
+### Crypto AI networks
+
+Many promised composable agents and rewarded contributors.
+
+Tokens arrived before demand. Rewards attracted people who gamed them more than people who built.
+
+**In ManyOne, rewards come only from real, paid use, and reputation only from verified outcomes.**
+
+### Marketplaces and the cold start
+
+Two-sided networks face a paradox: no users without supply, no supply without users.
+
+**ManyOne starts private.** A network inside a single organization is useful on its first day, with its own people, its own agents, and its own work. Public scale can come later.
 
 ---
 
-## 21. Where to Start
+## 21. Open Questions, and What History Suggests
+
+Some parts of ManyOne are unproven. None of them is new. Earlier systems have tried similar mechanisms, and their successes and failures point the way.
+
+### Will paying on use keep contributors?
+
+**What worked:** music collecting societies such as ASCAP have paid songwriters per use since 1914. App stores and YouTube turned revenue sharing into livelihoods for millions of people.
+
+**What failed:** micropayments. The mental cost of every tiny decision killed them. Streaming royalties show a second pitfall: pay concentrates at the top, and the long tail earns almost nothing.
+
+**Lesson:** settle in aggregate, invisibly, from real customer revenue. Keep non-monetary rewards, such as reputation, credit, and visibility, for the long tail.
+
+### How should value be split across composite work?
+
+**What worked:** music split sheets, where contributors agree on shares up front. Academic citation, which gives credit without money and has sustained science for centuries.
+
+**What failed:** automated open-source reward schemes. tea.xyz, for example, paid by dependency graph and was quickly flooded with spam packages built only to collect rewards. Citation rings game academic credit the same way.
+
+**Lesson:** simple, declared split rules beat clever automatic ones. Only derivatives that are used and verified earn anything.
+
+### How can public contributions survive copying?
+
+**What worked:** open-source companies such as Red Hat gave the code away and sold support, updates, and accountability. Wikipedia stays free while Wikimedia Enterprise sells reliable, fresh access to the largest consumers. Open licenses held because communities and enterprises honored them, not because anyone enforced them.
+
+**What failed:** DRM. Fighting copying directly rarely works for long.
+
+**Lesson:** do not fight copying. Sell what a copy cannot carry: **freshness, verification, and someone accountable.**
+
+### Can reputation resist gaming?
+
+**What worked:** early eBay feedback, and reviews marked "verified purchase", which tie reputation to a real transaction.
+
+**What failed:** open review systems, which filled with fake accounts and paid praise.
+
+**Lesson:** reputation must come from verified executions, not from ratings anyone can post.
+
+> **ManyOne does not need new economics. It needs to combine mechanisms that have already worked, and avoid the ones that already failed.**
+
+---
+
+## 22. Where to Start
 
 A network like this cannot start everywhere at once.
 
@@ -819,7 +895,7 @@ From one organization to its partners. From one domain to the next. From evidenc
 
 ---
 
-## 22. The Larger Vision
+## 23. The Larger Vision
 
 Today, humans share knowledge through:
 
@@ -850,7 +926,7 @@ That is **procedural collective intelligence**.
 
 ---
 
-## 23. Long-Term Imagination
+## 24. Long-Term Imagination
 
 Imagine asking ManyOne:
 
@@ -894,7 +970,7 @@ It requires the network to become better at **organizing intelligence**.
 
 ---
 
-## 24. The Civilizational Idea
+## 25. The Civilizational Idea
 
 Human progress has always depended on accumulated experience.
 
@@ -926,7 +1002,7 @@ ManyOne attempts to give that collective intelligence a native network.
 
 ---
 
-## 25. The North Star
+## 26. The North Star
 
 ManyOne should make one thing increasingly true:
 
