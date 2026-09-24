@@ -102,6 +102,8 @@ Mathematicians' reaction was not mainly "is it true?" It was "what did we learn?
 
 In his 2026 ICM plenary, Tao described mathematics moving from a shortage of proofs to an abundance of them. He warned that generative AI combined with commercial incentives is especially vulnerable to Goodhart's law, and he argued that verification (for example in Lean), exposition and passing the work on to others now matter more than generating it.
 
+To be fair, if the proof holds up, it is real progress, and unreadable proofs are not new: computer-assisted proofs such as the Four Color Theorem took years to be accepted and understood. Some mathematicians expect AI to help explain these proofs later. The main dispute is less about whether AI *can* do mathematics than about incentives: a proof is released as a marketing milestone, before the insight, credit and write-up that make it useful to the field.
+
 The lesson for ManyOne:
 
 > **An output is not a capability. Someone has to learn from it, attribute it and pass it on.**
@@ -116,17 +118,20 @@ Each lab builds its own agent, its own tool format, its own skill store and its 
 
 A race to build the smartest single model does not produce a shared record of *what actually worked*. That record needs to be neutral, work with any model, and outlast any single release.
 
-### Capability leaks anyway, through extraction instead of exchange
+### Extraction runs at every layer
 
-In September 2026, Anthropic reported that accounts linked to Alibaba, Moonshot AI, DeepSeek, Xiaomi and Zhipu ran industrial-scale "distillation" campaigns against Claude. It said Alibaba-linked accounts alone generated more than 151 million exchanges, spread across about 3,500 fraudulent accounts. It also reported that Moonshot relayed some Kimi user requests to Claude and presented the answers as Kimi's. U.S. agencies (CISA advisory AA26-251A) described similar extraction from several U.S. labs. The accused companies have not accepted these characterizations.
+Look at how value actually moves, and a chain appears. Each layer takes from the one below it without clear consent, credit or payment, and then complains when the layer above does the same to it.
 
-Around the same time, the open web crossed a threshold. Reported bot traffic overtook human traffic for HTML pages in mid-2026. Cloudflare, which fronts roughly a fifth of the web, moved AI crawlers to block-by-default and pay-per-crawl, and is now testing **pay-per-use**: publishers are paid when their content is actually used in an answer.
+1. **Creators → model makers.** Frontier models were trained largely on scraped web content and, in some cases, pirated books. Anthropic agreed to pay about $1.5 billion to settle *Bartz v. Anthropic* over roughly 480,000 pirated books; a judge approved the settlement in July 2026. Dozens of other copyright suits against AI companies are still in court.
+2. **Web → crawlers.** In mid-2026, bot traffic reportedly overtook human traffic for web pages for the first time. Publishers pushed back: Cloudflare, which sits in front of roughly a fifth of the web, now blocks AI crawlers by default, charges them per page crawled, and is testing **pay-per-use**, where publishers are paid when their content is actually used in an answer.
+3. **Model maker → model maker.** In September 2026, Anthropic reported "distillation" campaigns by Alibaba, Moonshot AI, DeepSeek, Xiaomi and Zhipu: more than 151 million Claude exchanges from Alibaba-linked accounts alone, run through thousands of fraudulent accounts. It also said Moonshot relayed some Kimi users' requests to Claude and presented the answers as Kimi's. U.S. agencies made similar claims about extraction from several U.S. labs. The accused companies dispute these accounts. Critics, including Microsoft's Satya Nadella, called it hypocritical for labs to forbid distillation after training on everyone else's data. Others reply that getting around access controls with fraudulent accounts is a different kind of act from crawling public pages. Both points are fair: the methods differ, but in both cases value moves without agreement or settlement.
+4. **Labs → individual researchers.** In the Navier–Stokes episode above, a mathematician alleged that the lab knew about his team's unfinished approach. The lab denies it. Whatever the truth, the incident shows how little protection unfinished human work has.
 
-These are two sides of the same failure:
+Seen as a whole, this is not about villains. The same companies appear as extractor in one layer and victim in the next. The consistent pattern is structural:
 
-> **Valuable know-how gets copied at scale, but nobody records who it came from, and nobody gets paid.**
+> **Know-how is valuable, copying it is cheap, and there is no shared way to record where it came from or to settle who is owed.**
 
-Walls and lawsuits can slow this down. They cannot make reuse productive. What is missing is an easier, legitimate path: reuse that is cheaper than stealing because provenance, licensing and payment come built in.
+Without that, every actor's rational move is to take what it can and wall off what it has. Lawsuits, blocking and terms-of-service bans treat the symptoms one layer at a time. What is missing is an easier, legitimate path: reuse that is cheaper than extraction because provenance, licensing and payment are built in, and that applies the same way to a solo author, a mathematician, a startup and a frontier lab.
 
 ### Free-shared skills are exploding, and so is the damage
 
@@ -152,7 +157,7 @@ That is the ManyOne principle, applied inside a single agent. ManyOne applies it
 |---|---|
 | Proofs and outputs are abundant; understanding is scarce | Share workflows along with the reasoning, explanation and lessons learned, not bare answers |
 | Labs race; users' experience stays locked in each silo | A model-neutral layer of workflows and evidence that outlasts any single model |
-| Distillation and crawling take value without attribution | Licensed, attributed reuse that pays contributors when their work is *used* |
+| Extraction at every layer (scraping, piracy, distillation, pre-emption), with the same companies as both extractor and victim | One neutral set of rules for attribution and payment on *use*, applied equally to every participant |
 | Free skill sharing is flooding registries with unvetted and malicious code | Provenance, signed versions, sandboxing and reputation based on observed results |
 | Agents bloat by loading everything | The network routes to a few proven capabilities on demand |
 | Benchmarks invite Goodhart's law | Verification is layered, grounded and hard to game (see §15) |
@@ -837,7 +842,7 @@ And the network should reward the people and machines that make that possible, a
 
 ## Sources (as of September 2026)
 
-These are the public reports behind §3. The claims about distillation and about who used whose work are **allegations** that the other parties dispute. They are summarized here as reported, not as established fact.
+These are the public reports behind §3. The claims about distillation and about who used whose work are **allegations** that the other parties dispute. They are summarized here as reported, not as established fact. The proposal deliberately takes no side between labs, countries or vendors. It uses these cases only to show the pattern.
 
 - NPR, "Mathematicians learn little from AI completing unsolved problem" (Sept 22, 2026): https://www.npr.org/2026/09/22/nx-s1-5968588/openai-navier-stokes-problem-mathematicians-learn-little
 - OpenAI, "On the Navier–Stokes Millennium Prize Problem": https://openai.com/index/navier-stokes-solution/
@@ -854,3 +859,7 @@ These are the public reports behind §3. The claims about distillation and about
 - Help Net Security, "Malicious AI agent skills can slip past the scanners built to stop them" (July 9, 2026): https://www.helpnetsecurity.com/2026/07/09/malicious-ai-agent-skills-scan/
 - "Agent Skill Security: Threat Models, Attacks, Defenses, and Evaluation" (arXiv 2607.13987): https://arxiv.org/pdf/2607.13987
 - MCP.Directory, "MCP Context Bloat Fix 2026 (Tool Search)": https://mcp.directory/blog/mcp-context-bloat-fix-2026-tool-search-code-mode-progressive-disclosure
+- Fortune, "Anthropic to pay authors $1.5 billion over pirated books used to train Claude" (July 21, 2026): https://fortune.com/2026/07/21/anthropic-copyright-settlement-authors/
+- Gizmodo, "In the Wild West of AI, Everybody Is Accusing Everybody Else of Theft": https://gizmodo.com/in-the-wild-west-of-ai-everybody-is-accusing-everybody-else-of-theft-2000810803
+- Business Chief, "Microsoft's Nadella Hits Out at AI Rivals Over Distillation": https://businesschief.com/news/microsoft-ceo-criticises-anthropic-and-ai-model-makers
+- Just Security, "The Case for Imposing Costs on China's AI Distillation Campaigns" (the opposing view): https://www.justsecurity.org/134124/costs-china-ai-distillation/
